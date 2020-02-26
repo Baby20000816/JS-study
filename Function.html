@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function myFunction(a, b) {
+        return a * b
+      }
+      var res = myFunction(2, 3)
+      console.log(res)
+
+      function myFunction() {
+        alert('调用一个函数')
+      }
+      myFunction()
+
+      //   functionName(parameter1,parameter2,parameter3){
+
+      //   }
+      function sayHello(name, age) {
+        console.log(name + '年龄是:' + age + '岁')
+      }
+      sayHello('john', 20)
+      sayHello(20, 'john')
+
+      function sayHello(name, age) {
+        console.log(name + '年龄' + age + '岁')
+      }
+      sayHello('john')
+
+      function myFunction() {
+        var carName = '大众'
+      }
+      var carName = '小众'
+      function myFunction() {
+        console.log(carName)
+      }
+      function myFunction() {
+        carName = '大众'
+      }
+      function myFunction() {
+        carName = '大众'
+      }
+      function sum(a, b) {
+        return a + b
+      }
+
+      var user = prompt('请输入')
+      alert(user)
+
+      var result = confirm('你确定要离开这里？')
+      if (result == true) {
+        alert('welcome')
+      } else {
+        alert('thank')
+      }
+    </script>
+  </body>
+</html>
