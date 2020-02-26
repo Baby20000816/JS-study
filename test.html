@@ -3,10 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>主页</title>
     <script language="javascript" type="text/javascript" src="demo.js"></script>
   </head>
   <body>
-    <div><h1>hello</h1></div>
+    <script>
+      document.write('<h1>hello js</h1>')
+      //输出标题
+      document.getElementById('title').innerHTML = '主页'
+      //输出段落
+      document.getElementById('content').innerHTML = '段落'
+
+      /*
+      下面将输出一个标题和段落
+      并将代表主页的输出
+      */
+      document.getElementById('title').innerHTML = '主页'
+      document.getElementById('content').innerHTML = '段落'
+    </script>
   </body>
 </html>
