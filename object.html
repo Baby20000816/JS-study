@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var person = {
+        name: 'john',
+        age: 31,
+        favColor: 'green',
+        height: 183
+      }
+      var x = person.age
+      var y = person['favColor']
+      document.write(x, y)
+
+      var course = { name: 'js', lessons: 54 }
+      console.log(course.name.length)
+      var ourDog = {
+        name: 'Camper',
+        legs: 4,
+        tails: 1,
+        friends: ['everything!']
+      }
+      ourDog.name = 'Happy Camper'
+      ourDog['name'] = 'Happy Camper'
+      ourDog.bark = 'bow-wow'
+      document.write('<br>' + ourDog.name + '<br>' + ourDog.bark)
+      var c1 = ourDog['tails']
+      delete ourDog['tails']
+      console.log(ourDog)
+
+      var message = 'Hello world'
+      var x = message.toUpperCase()
+      document.write('<br>' + x + '<br>')
+
+      var a = 'age'
+      var myobj = {
+        name: 'loen',
+        age: '28',
+        eat: function() {
+          return "i'm eating"
+        }
+      }
+      console.log(myobj['name'])
+      console.log(myobj[a])
+      console.log(myobj['eat']())
+
+      function persons(firstname, lastname, age, eyecolor) {
+        this.firstname = firstname
+        this.lastname = lastname
+        this.age = age
+        this.eyecolor = eyecolor
+      }
+      var myFather = new persons('john', 'Doe', 50, 'blue')
+      var myMother = new persons('rose', 'rallt', 48, 'red')
+      console.log(myFather.age)
+      console.log(myMother.firstname)
+
+      var john = {
+        name: 'john',
+        age: 25
+      }
+      var loen = {
+        name: 'loen',
+        age: 28
+      }
+
+      function people(name, age) {
+        this.name = name
+        this.age = age
+        this.changeName = function(name) {
+          this.name = name
+        }
+      }
+      var p = new people('Loen', 28)
+      p.changeName('john')
+
+      function peoples(name, age) {
+        this.name = name
+        this.age = age
+        this.yearofBirth = bornYear
+      }
+      function bornYear() {
+        return new Date().getFullYear - this.age
+      }
+      var p = new peoples('hl', 30)
+      console.log(p)
+    </script>
+  </body>
+</html>
