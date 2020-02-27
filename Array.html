@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //两种创建数组方法
+      var mycars = new Array('saab', 'volvo', 'bmw')
+
+      var myCars = new Array()
+      myCars[0] = 'saab'
+      myCars[1] = 'volvo'
+      myCars[2] = 'bmw'
+      myCars[3] = 'lincoln'
+
+      //push方法
+      var a = []
+      a[0] = 'zero'
+      a[1] = 'one'
+      console.log(a)
+      var a = []
+      a.push('zero')
+      a.push('one', 'two')
+      console.log(a)
+
+      //pop方法
+      var oneDown = [1, 4, 6].pop() //现在值为6，数组变成【1，4】
+      console.log(oneDown)
+      //shift方法
+      var oneDown = [1, 4, 6].shift() //现在值为1数组变成【4，6】
+      console.log(oneDown)
+      //unshift方法
+      var a = ['zero']
+      a.unshift('one') //a=['one','zero']
+      console.log(a)
+      //concat方法
+      var c1 = ['html', 'css']
+      var c2 = ['js', 'python']
+      var courses = c1.concat(c2)
+      console.log(courses)
+      //indexof方法
+      var fruits = ['香蕉', '橙子', '苹果', '甜瓜', '苹果']
+      var a = fruits.indexOf('苹果')
+      var b = fruits.indexOf('樱桃')
+      console.log(a, b)
+      //slice(start,end)方法
+      var fruit = ['Banana', 'orange', 'lemon', 'apple', 'mango']
+      var citrus = fruit.slice(1, 3)
+      console.log(citrus)
+      //关联数组
+      var person = [] //空数组
+      person['name'] = 'loen'
+      person['age'] = 28
+      console.log(person['age'])
+    </script>
+    //foreach方法
+    <div id="demo"></div>
+    <script>
+      var numbers = [64, 45, 72, 11, 49]
+      function myFunction(item, index) {
+        var demo = document.getElementById('demo')
+        demo.innerHTML = demo.innerHTML + 'index[' + index + ']:' + item + '<br>'
+      }
+      numbers.forEach(myFunction)
+    </script>
+  </body>
+</html>
