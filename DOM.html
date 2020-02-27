@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #container {
+        width: 600px;
+        height: 400px;
+        background: rgb(170, 199, 170);
+        position: relative;
+      }
+      #box {
+        width: 60px;
+        height: 60px;
+        background: rgb(211, 144, 144);
+        position: absolute;
+        left: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      var pos = 0
+      var t = setInterval(move, 10)
+      function move() {
+        if (pos >= 540) {
+          clearInterval(t)
+        } else {
+          pos += 1
+          document.getElementById('box').style.left = pos + 'px'
+        }
+      }
+      // //通过 id 找元素
+      // document.getElementById(id)
+      // //通过 类 找元素
+      // document.getElementsByClassName(name)
+      // //通过 标签 找元素
+      // document.getElementsByTagName(name)
+
+      // document.getElementById('demo').innerHTML = 'Hi'
+
+      // var arr = document.getElementsByClassName('demoe') //访问第二个元素
+      // arr[1].innerHTML = 'Hi I am Peter'
+
+      // var arr = document.getElementsByTagName('p')
+      // for (var x = 0; x < arr.length; x++) {
+      //   arr[x].innerHTML = 'Hi there'
+      // }
+      // var a = document.getElementById('demos')
+      // var arr = a.childNodes
+      // for (var x = 0; x < arr.length; x++) {
+      //   arr[x].innerHTML = '新的文本'
+      // }
+
+      // var el = document.getElementById('my-img') // 通过id="my-img"获取元素
+      // el.src = '2.jpg'
+
+      // document.getElementsByTagName('a')[0].href = 'https://www.google.cn'
+      // document.getElementsByTagName('a')[0].innerHTML = 'google'
+
+      var x = document.getElementById('demoex')
+      x.style.color = '6600FF'
+      x.style.width = '100px'
+
+      //创建一个新的段落
+      var p = document.createElement('p')
+      var node = document.createTextNode('一些新的文本') //添加文本到段落
+      p.appendChild(node)
+      var div = document.getElementById('demoexs') //将段落添加到div中 div.appendChild(p);
+      var parent = document.getElementById('demo')
+
+      var child = document.getElementById('p1')
+      child.parentNode.removeChild(child)
+
+      var p = document.createElement('p')
+      var node = document.createTextNode('这是新的文本')
+      p.appendChild(node)
+      var parent = document.getElementById('demo')
+      var child = document.getElementById('p1')
+      parent.replaceChild(p, child)
+      //a
+    </script>
+    <div id="container"><div id="box"></div></div>
+    <div class="demo"><span class="demo">Hi I'm Loen!</span></div>
+    <p class="demoe">This is a paragraph</p>
+    <p>hi</p>
+    <p>hello</p>
+    <p>hi</p>
+    <div id="demos">
+      <p>一些文本</p>
+      <p>另一些文本</p>
+    </div>
+
+    <!-- <img id="my-img" src="1.jpg" alt="" /> -->
+
+    <a href="http://www.baidu.com">百度</a>
+    <div id="demoex" style="width:200px">一些文本</div>
+    <div id="demoexs">一些文本</div>
+
+    <div id="demom">
+      <p id="p1">这是一个段落.</p>
+      <p id="p2">这是另外一个段落.</p>
+    </div>
+  </body>
+</html>
