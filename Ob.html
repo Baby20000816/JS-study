@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var txt = new String('string')
+      var txt = 'string' //简单方法
+
+      var str = 'HELLO,abc'
+      var a = str.toLowerCase() //转为小写
+      var b = str.toUpperCase() //转为大写
+      var c = '   hello word   '.trim() //去掉两边空白
+
+      var str = 'Hello word,welcome to the w3cs'
+      var n = str.indexOf('welcome') //13
+      var c = str.indexOf('loen') //-1
+      var str = 'Mr blue has a blue house and a blue car and a blue hat'
+      //将字符串中首次出现的blue'替换成red
+      var n = str.replace('blue', 'red') //Mr blue has a red house and a blue car and a blue hat
+      var c = str.replace(/blue/g, 'red') //Mr red has a red house and a red car and a red hat
+
+      var str = 'hello world!'
+      document.write(str.substring(3) + '<br>')
+      document.write(str.substring(3, 7))
+
+      //window对象属性
+      var winInnerHeight = window.innerHeight //返回窗口的文档显示区的高度
+      var winInnerWidth = window.innerWidth //返回窗口的文档显示区的宽度
+      var winOuterWidth = window.outerWidth //返回窗口的外部宽度，包含工具条与滚动条
+      var winOuterHeight = window.outerHeight //返回窗口的外部高度，包含工具条与滚动条
+      var winScreenLeft = window.screenLeft //返回相对于屏幕窗口的x坐标
+      var winScreenTop = window.screenTop //返回相对于屏幕窗口的y坐标
+      //window对象方法
+      //window.open(URL,NAME.SPECS.REPLACE)
+      function open_win() {
+        window.open('http://www.baidu.com')
+      }
+      function openWin() {
+        mywindow = window.open('', '', 'width=200,height=100')
+        mywindow.document.write('<p>这是我的窗口</p>')
+        mywindow.focus()
+      }
+      //打开一个窗口，1秒后关闭
+      //   var mywindow = window.open('', '', 'width=200,height=100')
+      //   mywindow.document.write('<p>这是我的窗口</p>')
+      //   setTimeout(function() {
+      //     mywindow.close()
+      //   }, 1000)
+
+      //使用clearTimeout()来阻止函数的执行
+      var myvar
+      function myFunction() {
+        myvar = setTimeout(function() {
+          alert('hello')
+        }, 3000)
+      }
+      function mystopFunction() {
+        clearTimeout(myvar)
+      }
+
+      //   var a =
+      //     '{"employees":[' +
+      //     '{"name":"google","site":"http://www.Google.com" },' +
+      //     '{"name":"baidu","site":"http://www.baidu.com" },' +
+      //     '{"name":"TaoBao","site":"http://www.taobao.com" }}}'
+      //   obj = JSON.parse(a)
+      //   document.getElementById('demo').innerHTML = obj.employees[1].name + ' ' + obj.employees[1].site
+      //   document.write(obj)
+
+      //reviver实例
+      //Json.parse()不允许逗号作为结尾
+      JSON.parse('{"p":5,"s":1.5,"t":-3}', function(k, v) {
+        if (k === '') return v //如果到了最顶层，直接返回属性值
+        return v * 2 //否则将属性值变为2倍
+      }) //{"p":10,"s":3,"t":-6}
+
+      JSON.parse('{"1":1,"2":2,"3":{"4":4,"5":{"6":6}}}', function(k, v) {
+        console.log(k)
+        return v
+      })
+
+      //stringify方法
+      var str = { name: 'baidu', site: 'http://www.baidu.com' }
+      str_pretty1 = JSON.stringify(str)
+      document.write('只有一个参数情况:')
+      document.write('<br>')
+      document.write('<pre>' + str_pretty1 + '</pre>')
+
+      document.write('<br>')
+      str_pretty2 = JSON.stringify(str, null, 4) //使用返回四个空格缩进
+      document.write('使用参数情况')
+      document.write('<br>')
+      document.write('<pre>' + str_pretty2 + '</pre>') //pre用于格式化输出
+
+      //math方法
+      document.write(Math.PI) //3.1415.....
+      //计算一个数字的平方根
+      var number = Math.sqrt(4)
+      document.write(number)
+      var n = prompt('请输入一个数字:', '')
+      var answer = Math.sqrt(n)
+      alert('数字' + n + '的平方根是:' + answer)
+
+      //floor方法
+      Math.floor(45.95) //45
+      Math.floor(45.05) //45
+      Math.floor(4) //4
+      Math.floor(-45.05) //-46
+      Math.floor(-45.95) //-46
+
+      Math.random()
+
+      Math.floor(Math.random() * 10 + 1)
+
+      x = Math.round(20.49) //20
+      x = Math.round(20.5) //20
+      x = Math.round(-20.5) //-20
+      x = Math.round(-20.51) //-21
+
+      //   new Date(milliseconds) //毫秒
+      //   new Date(dateString) //日期字符串
+      //   new Date(year, month, day, hours, minutes, seconds, milliseconds) //年月日时分秒毫秒
+
+      //Fir Jan 02 1970 08:00:00 GMT+0800
+      var d1 = new Date(86400000)
+      var d2 = new Date('October 19,2017 15:56:00')
+      var d2 = new Date(88, 5, 11, 11, 42, 0, 0)
+
+      function printTime() {
+        var d = new Date()
+        var hours = d.getHours()
+        var mins = d.getMinutes()
+        var secs = d.getSeconds()
+        document.body.innerHTML = hours + ':' + mins + ':' + secs
+      }
+      setInterval(printTime, 1000)
+    </script>
+  </body>
+</html>
